@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Hotel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    .results {
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de Cotação - Hotel X</h1>
+    <form id="calculator-form">
+      <h2>Configurações</h2>
+      <label for="price-single">Valor da diária - Single (R$):</label>
+      <input type="number" id="price-single" value="450" min="0" step="0.01"><br><br>
+      <label for="price-double">Valor da diária - Double (R$):</label>
+      <input type="number" id="price-double" value="500" min="0" step="0.01"><br><br>
+      <label for="price-triple">Valor da diária - Triple (R$):</label>
+      <input type="number" id="price-triple" value="550" min="0" step="0.01"><br><br>
+      <label for="iss-tax">Percentual ISS (%):</label>
+      <input type="number" id="iss-tax" value="5" min="0" step="0.1"><br><br>
+
+      <h2>Quartos</h2>
+      <label for="single">Quartos Single:</label>
+      <input type="number" id="single" value="40" min="0"><br><br>
+      <label for="double">Quartos Double:</label>
+      <input type="number" id="double" value="20" min="0"><br><br>
+      <label for="triple">Quartos Triple:</label>
+      <input type="number" id="triple" value="1" min="0"><br><br>
+      <label for="nights">Número de Noites:</label>
+      <input type="number" id="nights" value="5" min="1"><br><br>
+      <button type="button" id="calculate-btn">Calcular</button>
+    </form>
+
+    <div class="results">
+      <h2>Resultados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo de Quarto</th>
+            <th>Quantidade</th>
+            <th>Capacidade</th>
+            <th>Valor Diária</th>
+            <th>Valor Total</th>
+          </tr>
+        </thead>
+        <tbody id="results-body">
+          <!-- Resultados dinâmicos aqui -->
+        </tbody>
+      </table>
+      <div id="summary">
+        <!-- Resumo dinâmico aqui -->
+      </div>
+      <button type="button" id="save-pdf-btn">Salvar em PDF</button>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
